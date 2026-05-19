@@ -1,0 +1,28 @@
+from djongo import models
+from django.contrib.auth.models import AbstractUser
+
+class Team(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    class Meta:
+        db_table = 'teams'
+
+class Activity(models.Model):
+    user = models.CharField(max_length=100)
+    activity_type = models.CharField(max_length=100)
+    duration = models.IntegerField()
+    team = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'activities'
+
+class Leaderboard(models.Model):
+    team = models.CharField(max_length=100)
+    points = models.IntegerField()
+    class Meta:
+        db_table = 'leaderboard'
+
+class Workout(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    suggested_for = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'workouts'

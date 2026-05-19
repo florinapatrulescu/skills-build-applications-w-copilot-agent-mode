@@ -1,0 +1,9 @@
+/* Basic CSS for Octofit Tracker */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f9fa;
+}
+#root {
+  min-height: 100vh;
+}
